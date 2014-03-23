@@ -25,33 +25,51 @@ import com.mousefeed.client.OnWrongInvocationMode;
 import com.mousefeed.client.collector.AbstractActionDesc;
 import com.mousefeed.client.collector.Collector;
 import com.mousefeed.eclipse.preferences.PreferenceAccessor;
+import java.lang.reflect.Field;
+import java.lang.reflect.Method;
 import java.util.HashMap;
 import java.util.HashSet;
 import java.util.Map;
 import org.apache.commons.lang.StringUtils;
 import org.eclipse.core.commands.Command;
+import org.eclipse.core.commands.ExecutionEvent;
+import org.eclipse.core.commands.ExecutionException;
+import org.eclipse.core.commands.IExecutionListener;
+import org.eclipse.core.commands.NotHandledException;
 import org.eclipse.core.commands.ParameterizedCommand;
 import org.eclipse.core.commands.common.NotDefinedException;
+import org.eclipse.core.runtime.IStatus;
+import org.eclipse.core.runtime.Status;
 import org.eclipse.e4.ui.workbench.renderers.swt.HandledContributionItem;
 import org.eclipse.jface.action.ActionContributionItem;
 import org.eclipse.jface.action.IContributionItem;
 import org.eclipse.jface.action.SubContributionItem;
+import org.eclipse.jface.text.ITextOperationTarget;
+import org.eclipse.jface.text.ITextViewer;
 import org.eclipse.swt.SWT;
+import org.eclipse.swt.custom.StyledText;
+import org.eclipse.swt.graphics.Point;
 import org.eclipse.swt.widgets.Event;
 import org.eclipse.swt.widgets.Listener;
 import org.eclipse.swt.widgets.MenuItem;
+import org.eclipse.swt.widgets.Text;
 import org.eclipse.swt.widgets.ToolItem;
 import org.eclipse.swt.widgets.Widget;
 import org.eclipse.ui.IWorkbench;
+import org.eclipse.ui.IWorkbenchPart;
 import org.eclipse.ui.PlatformUI;
 import org.eclipse.ui.commands.ICommandService;
+import org.eclipse.ui.handlers.HandlerUtil;
 import org.eclipse.ui.menus.CommandContributionItem;
+import org.eclipse.ui.texteditor.ITextEditor;
 
 /**
  * Globally listens for the selection events.
  * 
  * @author Andriy Palamarchuk
  * @author Robert Wloch
+ * @author Rabea Gransberger (@rgransberger)
+ * 
  */
 @SuppressWarnings("restriction")
 public class GlobalSelectionListener implements Listener {
@@ -64,8 +82,7 @@ public class GlobalSelectionListener implements Listener {
     /**
      * Provides access to the plugin preferences.
      */
-    private final PreferenceAccessor preferences = PreferenceAccessor
-            .getInstance();
+    private final PreferenceAccessor preferences = PreferenceAccessor.getInstance();
 
     /**
      * Finds keyboard shortcut for an action.
@@ -90,8 +107,7 @@ public class GlobalSelectionListener implements Listener {
     /**
      * The workbench command service.
      */
-    private final ICommandService commandService = (ICommandService) getWorkbench()
-            .getService(ICommandService.class);
+    private final ICommandService commandService = (ICommandService) getWorkbench().getService(ICommandService.class);
 
     /**
      * Counts the number of times an action or command is invoked.
@@ -102,6 +118,28 @@ public class GlobalSelectionListener implements Listener {
      * Default constructor does nothing.
      */
     public GlobalSelectionListener() {
+        commandService.addExecutionListener(new IExecutionListener() {
+
+            @Override
+            public void preExecute(String commandId, ExecutionEvent event) {
+                onExecuteCommand(commandId, event);
+            }
+
+            @Override
+            public void postExecuteSuccess(String commandId, Object returnValue) {
+                // none
+            }
+
+            @Override
+            public void postExecuteFailure(String commandId, ExecutionException exception) {
+                // none
+            }
+
+            @Override
+            public void notHandled(String commandId, NotHandledException exception) {
+                // none
+            }
+        });
     }
 
     /**
@@ -123,15 +161,13 @@ public class GlobalSelectionListener implements Listener {
         }
     }
 
-    private void processContributionItem(
-            final IContributionItem contributionItem, final Event event) {
+    private void processContributionItem(final IContributionItem contributionItem, final Event event) {
         if (contributionItem instanceof SubContributionItem) {
             final SubContributionItem subCI = (SubContributionItem) contributionItem;
             processContributionItem(subCI.getInnerItem(), event);
         } else if (contributionItem instanceof ActionContributionItem) {
             final ActionContributionItem item = (ActionContributionItem) contributionItem;
-            final AbstractActionDesc actionDesc = actionActionDescGenerator
-                    .generate(item.getAction());
+            final AbstractActionDesc actionDesc = actionActionDescGenerator.generate(item.getAction());
             processActionDesc(actionDesc, event);
         } else if (contributionItem instanceof CommandContributionItem) {
             final AbstractActionDesc actionDesc = commandActionDescGenerator
@@ -155,8 +191,7 @@ public class GlobalSelectionListener implements Listener {
      * @param event
      *            the original event. Assumed not <code>null</code>.
      */
-    private void processActionDesc(final AbstractActionDesc actionDesc,
-            final Event event) {
+    private void processActionDesc(final AbstractActionDesc actionDesc, final Event event) {
         // skips the configure action invocation action
         if (CONFIGURE_ACTION_INVOCATION_DEF.equals(actionDesc.getId())) {
             return;
@@ -191,8 +226,7 @@ public class GlobalSelectionListener implements Listener {
      *            the populated action description. Must have a keyboard
      *            shortcut defined. Not <code>null</code>.
      */
-    private void giveActionFeedback(final AbstractActionDesc actionDesc,
-            final Event event) {
+    private void giveActionFeedback(final AbstractActionDesc actionDesc, final Event event) {
         notNull(actionDesc);
         isTrue(StringUtils.isNotBlank(actionDesc.getLabel()));
 
@@ -207,10 +241,14 @@ public class GlobalSelectionListener implements Listener {
             }
             currentCount = currentCount + 1;
             actionUsageMonitor.put(id, currentCount);
-            if (isConfigureKeyboardShortcutEnabled(currentCount.intValue())
-                    && isConfigurableAction(actionDesc)) {
+            if (isConfigureKeyboardShortcutEnabled(currentCount.intValue()) && isConfigurableAction(actionDesc)) {
                 new NagPopUp(actionDesc.getLabel(), actionDesc.getId()).open();
             }
+            return;
+        }
+
+        if (getOnWrongInvocationMode(id) == OnWrongInvocationMode.PRESENTATION
+                && actionDesc.getAccelerators().isEmpty()) {
             return;
         }
 
@@ -219,13 +257,17 @@ public class GlobalSelectionListener implements Listener {
             // go on
             break;
         case REMIND:
-            new NagPopUp(actionDesc.getLabel(), actionDesc.getAccelerator(),
-                    false).open();
+            new NagPopUp(actionDesc.getLabel(), actionDesc.getAccelerators(), false, actionDesc.getCaretLocation())
+                    .open();
+            break;
+        case PRESENTATION:
+            new NagPopUp(actionDesc.getLabel(), actionDesc.getAccelerators(), false, actionDesc.getCaretLocation())
+                    .open();
             break;
         case ENFORCE:
             cancelEvent(event);
-            new NagPopUp(actionDesc.getLabel(), actionDesc.getAccelerator()
-                    + "", true).open();
+            new NagPopUp(actionDesc.getLabel(), actionDesc.getAccelerators(), true, actionDesc.getCaretLocation())
+                    .open();
             break;
         default:
             throw new AssertionError();
@@ -248,8 +290,7 @@ public class GlobalSelectionListener implements Listener {
         if (command != null) {
             final HashSet allParameterizedCommands = new HashSet();
             try {
-                allParameterizedCommands.addAll(ParameterizedCommand
-                        .generateCombinations(command));
+                allParameterizedCommands.addAll(ParameterizedCommand.generateCombinations(command));
             } catch (final NotDefinedException e) {
                 // It is safe to just ignore undefined commands.
             }
@@ -268,10 +309,8 @@ public class GlobalSelectionListener implements Listener {
      *         threshold property.
      */
     public boolean isConfigureKeyboardShortcutEnabled(final int currentCount) {
-        final boolean isConfigureKeyboardShortcutEnabled = preferences
-                .isConfigureKeyboardShortcutEnabled();
-        final boolean isCounterAboveThreshold = currentCount > preferences
-                .getConfigureKeyboardShortcutThreshold();
+        final boolean isConfigureKeyboardShortcutEnabled = preferences.isConfigureKeyboardShortcutEnabled();
+        final boolean isCounterAboveThreshold = currentCount > preferences.getConfigureKeyboardShortcutThreshold();
         return isConfigureKeyboardShortcutEnabled && isCounterAboveThreshold;
     }
 
@@ -284,8 +323,7 @@ public class GlobalSelectionListener implements Listener {
      * @return the mode. Not <code>null</code>.
      */
     private OnWrongInvocationMode getOnWrongInvocationMode(final String id) {
-        final OnWrongInvocationMode mode = preferences
-                .getOnWrongInvocationMode(id);
+        final OnWrongInvocationMode mode = preferences.getOnWrongInvocationMode(id);
         return mode == null ? preferences.getOnWrongInvocationMode() : mode;
     }
 
@@ -298,5 +336,50 @@ public class GlobalSelectionListener implements Listener {
     private void cancelEvent(final Event event) {
         event.type = SWT.None;
         event.doit = false;
+    }
+
+    protected void onExecuteCommand(String commandId, ExecutionEvent event) {
+        Point caretLocation = null;
+
+        IWorkbenchPart activePartChecked = HandlerUtil.getActivePart(event);
+        if (activePartChecked instanceof ITextEditor) {
+            ITextOperationTarget adapter = (ITextOperationTarget) ((ITextEditor) activePartChecked)
+                    .getAdapter(ITextOperationTarget.class);
+            if (adapter instanceof ITextViewer) {
+                ITextViewer viewer = (ITextViewer) adapter;
+                caretLocation = viewer.getTextWidget().getCaret().getLocation();
+                caretLocation = viewer.getTextWidget().toDisplay(caretLocation);
+            }
+        } else {
+            Event event2 = getEventFromE4Context(event);
+            if (event2 != null) {
+                if (event2.widget instanceof StyledText) {
+                    StyledText text = (StyledText) event2.widget;
+                    caretLocation = text.getCaret().getLocation();
+                    caretLocation = text.toDisplay(caretLocation);
+                } else if (event2.widget instanceof Text) {
+                    Text text = (Text) event2.widget;
+                    caretLocation = text.getCaretLocation();
+                    caretLocation = text.toDisplay(caretLocation);
+                }
+            }
+        }
+        processActionDesc(commandActionDescGenerator.generate(event.getCommand(), caretLocation), null);
+    }
+
+    private Event getEventFromE4Context(ExecutionEvent event) {
+        Object applicationContext = event.getApplicationContext();
+        try {
+            Field declaredField = applicationContext.getClass().getDeclaredField("staticContext");
+            declaredField.setAccessible(true);
+            Object/* IEclipseContext */ieclipseContext = declaredField.get(applicationContext);
+            Method declaredMethod = ieclipseContext.getClass().getDeclaredMethod("get", Class.class);
+            Event innerEvent = (Event) declaredMethod.invoke(ieclipseContext, Event.class);
+            return innerEvent;
+        } catch (Throwable e) {
+            Activator.getDefault().getLog()
+                    .log(new Status(IStatus.WARNING, Activator.PLUGIN_ID, "Could not get event from E4 context", e));
+        }
+        return null;
     }
 }

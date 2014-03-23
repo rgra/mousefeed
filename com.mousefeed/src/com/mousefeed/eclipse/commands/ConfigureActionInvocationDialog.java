@@ -22,10 +22,11 @@ import static com.mousefeed.eclipse.Layout.STACKED_V_OFFSET;
 import static com.mousefeed.eclipse.Layout.placeUnder;
 import static org.apache.commons.lang.Validate.notNull;
 
+import com.mousefeed.eclipse.preferences.invocation.ActionOnWrongInvocationMode;
+
 import com.mousefeed.client.Messages;
 import com.mousefeed.client.OnWrongInvocationMode;
 import com.mousefeed.client.collector.AbstractActionDesc;
-import com.mousefeed.eclipse.preferences.ActionOnWrongInvocationMode;
 import com.mousefeed.eclipse.preferences.PreferenceAccessor;
 import org.eclipse.jface.dialogs.Dialog;
 import org.eclipse.swt.SWT;

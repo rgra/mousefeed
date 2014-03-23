@@ -18,17 +18,17 @@
  */
 package com.mousefeed.eclipse.preferences;
 
-import org.eclipse.core.runtime.preferences.AbstractPreferenceInitializer;
-import org.eclipse.jface.preference.IPreferenceStore;
-
 import com.mousefeed.client.OnWrongInvocationMode;
 import com.mousefeed.eclipse.Activator;
+import org.eclipse.core.runtime.preferences.AbstractPreferenceInitializer;
+import org.eclipse.jface.preference.IPreferenceStore;
 
 /**
  * Initializes default preference values.
  *
  * @author Andriy Palamarchuk
  * @author Robert Wloch
+ * @author Rabea Gransberger (@rgransberger)
  */
 public class PreferenceInitializer extends AbstractPreferenceInitializer {
 
@@ -55,5 +55,9 @@ public class PreferenceInitializer extends AbstractPreferenceInitializer {
         store.setDefault(
                 PreferenceConstants.P_CONFIGURE_KEYBOARD_SHORTCUT_THRESHOLD,
                 PreferenceConstants.CONFIGURE_KEYBOARD_SHORTCUT_THRESHOLD_DEFAULT);
+        store.setDefault(PreferenceConstants.P_NAG_CLOSE_TIMEOUT,
+                PreferenceConstants.CLOSE_TIMEOUT_DEFAULT);
+        store.setDefault(PreferenceConstants.P_NAG_LISTENER_TIMEOUT,
+                PreferenceConstants.CLOSE_LISTENER_TIMEOUT_DEFAULT);
     }
 }

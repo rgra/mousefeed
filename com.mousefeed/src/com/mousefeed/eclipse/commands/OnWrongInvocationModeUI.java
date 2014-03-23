@@ -36,30 +36,34 @@ import org.eclipse.swt.widgets.Control;
 import org.eclipse.swt.widgets.Label;
 
 /**
- * Helper class to generate on wrong invocation mode action handling UI -
- * a label and a dropdown.
+ * Helper class to generate on wrong invocation mode action handling UI - a
+ * label and a dropdown.
  * 
  * @author Andriy Palamarchuk
+ * @author Rabea Gransberger (@rgransberger)
  */
 public class OnWrongInvocationModeUI {
-    
+
     /**
      * Default constructor does nothing.
      */
     public OnWrongInvocationModeUI() {
     }
-    
+
     /**
      * Creates the label.
-     * @param container the container to create this control in.
-     * Not <code>null</code>.
-     * @param aboveControl the control above. <code>null</code> if this
-     * is the topmost control in the container.
-     * @param labelText the label text. Not <code>null</code>.
+     * 
+     * @param container
+     *            the container to create this control in. Not <code>null</code>
+     *            .
+     * @param aboveControl
+     *            the control above. <code>null</code> if this is the topmost
+     *            control in the container.
+     * @param labelText
+     *            the label text. Not <code>null</code>.
      * @return the label control. Never <code>null</code>.
      */
-    public Label createLabel(final Composite container, final Control aboveControl,
-            final String labelText) {
+    public Label createLabel(final Composite container, final Control aboveControl, final String labelText) {
         notNull(container);
         notNull(labelText);
         final Label label = new Label(container, SWT.NULL);
@@ -70,10 +74,13 @@ public class OnWrongInvocationModeUI {
 
     /**
      * Creates the on wrong invocation mode handling dropdown.
-     * @param container the container to create this control in.
-     * Not <code>null</code>.
-     * @param aboveControl the control above. <code>null</code> if this
-     * is the topmost control in the container.
+     * 
+     * @param container
+     *            the container to create this control in. Not <code>null</code>
+     *            .
+     * @param aboveControl
+     *            the control above. <code>null</code> if this is the topmost
+     *            control in the container.
      * @return the combo control. Never <code>null</code>.
      */
     public Combo createCombo(final Composite container, final Control aboveControl) {
@@ -82,8 +89,7 @@ public class OnWrongInvocationModeUI {
 
         final Combo combo = new Combo(container, SWT.READ_ONLY);
         combo.setItems(OnWrongInvocationMode.getLabels());
-        final FormData formData =
-                placeUnder(combo, aboveControl, STACKED_LABEL_V_OFFSET);
+        final FormData formData = placeUnder(combo, aboveControl, STACKED_LABEL_V_OFFSET);
         formData.right = new FormAttachment(WHOLE_SIZE, -WINDOW_MARGIN);
         return combo;
     }

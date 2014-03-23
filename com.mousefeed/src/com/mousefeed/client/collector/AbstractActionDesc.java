@@ -20,28 +20,37 @@ package com.mousefeed.client.collector;
 
 import static org.apache.commons.lang.StringUtils.isNotBlank;
 import static org.apache.commons.lang.Validate.isTrue;
+
+import java.util.Collections;
+import java.util.HashMap;
+import java.util.Map;
+import org.eclipse.swt.graphics.Point;
+
 /**
  * Information about an action invoked by the user.
  * 
  * @author Andriy Palamarchuk
+ * @author Rabea Gransberger (@rgransberger)
  */
 public abstract class AbstractActionDesc {
+
+    public static String DEFAULT_ACCELERATOR_KEY = "default";
+
     /**
      * @see #getLabel()
      */
     private String label;
-    
-    /**
-     * @see #getAccelerator()
-     */
-    private String accelerator;
+
+    private final Map<String, String> accelerators = new HashMap<String, String>();
+
+    private Point caretLocation;
 
     /**
      * The id of the user action.
-     * @return the string identifying the action invoked by the user.
-     * The default behavior is to return {@link #getLabel()}.
-     * Subclasses should provide better values.
-     * Never blank.
+     * 
+     * @return the string identifying the action invoked by the user. The
+     *         default behavior is to return {@link #getLabel()}. Subclasses
+     *         should provide better values. Never blank.
      */
     public String getId() {
         return getLabel();
@@ -49,46 +58,59 @@ public abstract class AbstractActionDesc {
 
     /**
      * The action human-readable label.
-     * @return the label. Should not be blank after initialized.
-     * The '&' characters are removed from the original value.
+     * 
+     * @return the label. Should not be blank after initialized. The '&'
+     *         characters are removed from the original value.
      */
     public String getLabel() {
         return label;
     }
 
     /**
-     * @param label the new label. Not blank.
+     * @param label
+     *            the new label. Not blank.
      * @see #getLabel()
      */
     public void setLabel(final String label) {
         isTrue(isNotBlank(label));
         this.label = label.replace("&", "");
     }
-    
+
     /**
      * Indicates whether the action has a keyboard shortcut.
-     * @return <code>true</code> if the action description has
-     * keyboard shortcut.
+     * 
+     * @return <code>true</code> if the action description has keyboard
+     *         shortcut.
      */
     public boolean hasAccelerator() {
-        return getAccelerator() != null;
+        return !accelerators.isEmpty();
     }
 
     /**
-     * The keyboard combination to call the action.
-     * @return a string describing the action keyboard combination.
-     * Can be <code>null</code> if there is no keyboard combination for the
-     * action.
-     */
-    public String getAccelerator() {
-        return accelerator;
-    }
-
-    /**
-     * @param accelerator the new shortcut value. Can be <code>null</code>.
+     * @param accelerator
+     *            the new shortcut value. Can be <code>null</code>.
      * @see #getAccelerator()
      */
     public void setAccelerator(final String accelerator) {
-        this.accelerator = accelerator;
+        this.accelerators.put(DEFAULT_ACCELERATOR_KEY, accelerator);
+    }
+
+    public void setAccelerators(String accelerator,
+            Map<String, String> accelerators) {
+        setAccelerator(accelerator);
+        this.accelerators.putAll(accelerators);
+
+    }
+
+    public Map<String, String> getAccelerators() {
+        return Collections.unmodifiableMap(accelerators);
+    }
+
+    public Point getCaretLocation() {
+        return caretLocation;
+    }
+
+    public void setCaretLocation(Point location) {
+        this.caretLocation = location;
     }
 }

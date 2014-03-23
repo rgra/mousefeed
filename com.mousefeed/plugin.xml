@@ -23,16 +23,22 @@
    </extension>
    <extension
          point="org.eclipse.ui.preferencePages">
-      <page
+    <page
             name="MouseFeed"
-            class="com.mousefeed.eclipse.preferences.PreferencePage"
+            class="com.mousefeed.eclipse.preferences.main.PreferencePage"
             id="com.mousefeed.preferences.PreferencePage">
       </page>
       <page
             category="com.mousefeed.preferences.PreferencePage"
-            class="com.mousefeed.eclipse.preferences.ActionInvocationPreferencePage"
+            class="com.mousefeed.eclipse.preferences.invocation.ActionInvocationPreferencePage"
             id="com.mousefeed.preferences.ActionInvocationPreferencePage"
             name="%actionInvocation">
+      </page>
+       <page
+            category="com.mousefeed.preferences.PreferencePage"
+            class="com.mousefeed.eclipse.preferences.presentation.PresentationModePreferencePage"
+            id="com.mousefeed.preferences.PresentationModePreferencePage"
+            name="%presentationMode">
       </page>
    </extension>
    <extension

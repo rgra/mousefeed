@@ -18,64 +18,83 @@
  */
 package com.mousefeed.eclipse.preferences;
 
+import static org.apache.commons.lang.time.DateUtils.MILLIS_PER_SECOND;
+
 /**
  * Constant definitions for plug-in preferences.
  *
  * @author Andriy Palamarchuk
  * @author Robert Wloch
+ * @author Rabea Gransberger (@rgransberger)
  */
 public final class PreferenceConstants {
 
     /**
-     * Whether invocation control is enabled preference.
-     * The preference indicates whether to help to learn the desired way to
-     * invoke actions.
+     * Whether invocation control is enabled preference. The preference
+     * indicates whether to help to learn the desired way to invoke actions.
      */
-    public static final String P_INVOCATION_CONTROL_ENABLED =
-            "InvocationControlEnabled";
-    
+    public static final String P_INVOCATION_CONTROL_ENABLED = "InvocationControlEnabled";
+
     /**
      * The default value for the setting {@link #P_INVOCATION_CONTROL_ENABLED}
      * setting.
      */
     public static final boolean INVOCATION_CONTROL_ENABLED_DEFAULT = true;
-    
-    /**
-     * Whether keyboard shortcut configuration is enabled preference.
-     * The preference indicates whether to show the Keys preference page
-     * for often used actions without a shortcut.
-     */
-    public static final String P_CONFIGURE_KEYBOARD_SHORTCUT_ENABLED =
-            "ConfigureKeyboardShortcutEnabled";
 
     /**
-     * The default value for the setting {@link #P_CONFIGURE_KEYBOARD_SHORTCUT_ENABLED}
-     * setting.
+     * Whether keyboard shortcut configuration is enabled preference. The
+     * preference indicates whether to show the Keys preference page for often
+     * used actions without a shortcut.
+     */
+    public static final String P_CONFIGURE_KEYBOARD_SHORTCUT_ENABLED = "ConfigureKeyboardShortcutEnabled";
+
+    /**
+     * The default value for the setting
+     * {@link #P_CONFIGURE_KEYBOARD_SHORTCUT_ENABLED} setting.
      */
     public static final boolean CONFIGURE_KEYBOARD_SHORTCUT_ENABLED_DEFAULT = true;
 
     /**
      * Threshold for action invocation counter above which keyboard shortcut
-     * configuration is enabled preference.
-     * The preference indicates whether to show the Keys preference page
-     * for often used actions without a shortcut.
+     * configuration is enabled preference. The preference indicates whether to
+     * show the Keys preference page for often used actions without a shortcut.
      */
-    public static final String P_CONFIGURE_KEYBOARD_SHORTCUT_THRESHOLD =
-            "ConfigureKeyboardShortcutThreshold";
-    
+    public static final String P_CONFIGURE_KEYBOARD_SHORTCUT_THRESHOLD = "ConfigureKeyboardShortcutThreshold";
+
     /**
-     * The default value for the setting {@link #P_CONFIGURE_KEYBOARD_SHORTCUT_THRESHOLD}
-     * setting.
+     * The default value for the setting
+     * {@link #P_CONFIGURE_KEYBOARD_SHORTCUT_THRESHOLD} setting.
      */
     public static final int CONFIGURE_KEYBOARD_SHORTCUT_THRESHOLD_DEFAULT = 2;
-    
+
     /**
      * Indicates how to deal with actions called with wrong action invocation
      * mode if there is no specific handling defined.
      */
-    public static final String P_DEFAULT_ON_WRONG_INVOCATION_MODE =
-            "DefaultOnWrongInvocationMode";
-    
+    public static final String P_DEFAULT_ON_WRONG_INVOCATION_MODE = "DefaultOnWrongInvocationMode";
+
+    /**
+     * Time after which the pop up will automatically close itself.
+     */
+    public static final String P_NAG_CLOSE_TIMEOUT = "NagPopupCloseTimeout";
+
+    /**
+     * Timeout, after which listener closes the dialog on any user action. Is
+     * necessary to skip events caused by the current user action.
+     */
+    public static final String P_NAG_LISTENER_TIMEOUT = "NagPopupListenerTimeout";
+
+    /**
+     * The default value for the setting {@link #P_NAG_CLOSE_TIMEOUT} setting.
+     */
+    public static final int CLOSE_TIMEOUT_DEFAULT = 5 * (int) MILLIS_PER_SECOND;
+
+    /**
+     * The default value for the setting {@link #P_NAG_LISTENER_TIMEOUT}
+     * setting.
+     */
+    public static final int CLOSE_LISTENER_TIMEOUT_DEFAULT = 5 * (int) MILLIS_PER_SECOND;
+
     private PreferenceConstants() {
     }
 }

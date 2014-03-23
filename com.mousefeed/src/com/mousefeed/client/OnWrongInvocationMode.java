@@ -19,17 +19,22 @@
 package com.mousefeed.client;
 
 /**
- * What to do if an action is called with a wrong mode.
- * E.g. in a situation when an action must be called with a keyboard,
- * but is called with a mouse.
+ * What to do if an action is called with a wrong mode. E.g. in a situation when
+ * an action must be called with a keyboard, but is called with a mouse.
  * 
  * @author Andriy Palamarchuk
+ * @author Rabea Gransberger (@rgransberger)
  */
 public enum OnWrongInvocationMode {
     /**
      * Allow user to proceed.
      */
     DO_NOTHING,
+
+    /**
+     * Presentation mode, just show the shortcuts used.
+     */
+    PRESENTATION,
 
     /**
      * Remind the user that he uses incorrect access mode. 
