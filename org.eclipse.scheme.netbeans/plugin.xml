@@ -1,0 +1,163 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?eclipse version="3.4"?>
+<plugin>
+   <extension point="org.eclipse.ui.bindings">
+   
+     <scheme name="NetBeans" id="org.netbeans.scheme.default" />
+     
+   <key commandId="org.eclipse.debug.ui.commands.StepReturn" sequence="M1+F7" schemeId="org.netbeans.scheme.default"/>
+   <key commandId="org.eclipse.ui.window.openEditorDropDown" sequence="M1+M2+T" schemeId="org.netbeans.scheme.default"/>
+ 
+         <key commandId="com.mousefeed.commands.configureActionInvocation" sequence="M1+M2+1" schemeId="org.netbeans.scheme.default" contextId="org.eclipse.ui.contexts.window"/>
+        <key commandId="org.eclipse.debug.ui.command.nextpage" sequence="M1+{" schemeId="org.netbeans.scheme.default" contextId="org.eclipse.debug.ui.memory.abstractasynctablerendering"/>
+        <key commandId="org.eclipse.debug.ui.commands.DebugLast" sequence="M1+F5" schemeId="org.netbeans.scheme.default" contextId="org.eclipse.ui.contexts.window"/>
+        <key commandId="org.eclipse.debug.ui.commands.Resume" sequence="F5" schemeId="org.netbeans.scheme.default" contextId="org.eclipse.debug.ui.debugging"/>
+        <key commandId="org.eclipse.debug.ui.commands.RunLast" sequence="F6" schemeId="org.netbeans.scheme.default" contextId="org.eclipse.ui.contexts.window"/>
+        <key commandId="org.eclipse.debug.ui.commands.RunToLine" sequence="M1+R" schemeId="org.netbeans.scheme.default" contextId="org.eclipse.debug.ui.debugging"/>
+        <key commandId="org.eclipse.debug.ui.commands.StepOver" sequence="F8" schemeId="org.netbeans.scheme.default" contextId="org.eclipse.debug.ui.debugging"/>
+        <key commandId="org.eclipse.debug.ui.commands.Terminate" sequence="M2+F5" schemeId="org.netbeans.scheme.default" contextId="org.eclipse.debug.ui.debugging"/>
+        <key commandId="org.eclipse.debug.ui.commands.ToggleBreakpoint" sequence="M1+F8" schemeId="org.netbeans.scheme.default" contextId="org.eclipse.ui.contexts.window"/>
+        <key commandId="org.eclipse.egit.ui.RepositoriesViewPaste" sequence="M1+V" schemeId="org.netbeans.scheme.default" contextId="org.eclipse.egit.ui.RepositoriesView"/>
+        <key commandId="org.eclipse.egit.ui.RepositoriesViewPaste" sequence="M2+INSERT" schemeId="org.netbeans.scheme.default" contextId="org.eclipse.egit.ui.RepositoriesView"/>
+        <key commandId="org.eclipse.egit.ui.internal.reflog.CopyCommand" sequence="M1+C" schemeId="org.netbeans.scheme.default" contextId="org.eclipse.egit.ui.ReflogView"/>
+        <key commandId="org.eclipse.egit.ui.internal.reflog.CopyCommand" sequence="M1+INSERT" schemeId="org.netbeans.scheme.default" contextId="org.eclipse.egit.ui.ReflogView"/>
+        <key commandId="org.eclipse.jdt.debug.ui.breakpoint.properties" sequence="M1+M2+7" schemeId="org.netbeans.scheme.default" contextId="org.eclipse.debug.ui.BreakpointView"/>
+        <key commandId="org.eclipse.jdt.debug.ui.commands.AllInstances" sequence="M1+M2+N" schemeId="org.netbeans.scheme.default" contextId="org.eclipse.ui.contexts.window"/>
+        <key commandId="org.eclipse.jdt.debug.ui.commands.Execute" sequence="M2+F6" schemeId="org.netbeans.scheme.default" contextId="org.eclipse.ui.contexts.window"/>
+        <key commandId="org.eclipse.jdt.debug.ui.commands.Inspect" sequence="M1+F9" schemeId="org.netbeans.scheme.default" contextId="org.eclipse.ui.contexts.dialogAndWindow"/>
+        <key commandId="org.eclipse.jdt.ui.correction.assignToField.assist" sequence="M2+M3+E" schemeId="org.netbeans.scheme.default" contextId="org.eclipse.jdt.ui.javaEditorScope"/>
+        <key commandId="org.eclipse.jdt.ui.correction.assignToLocal.assist" sequence="M2+M3+V" schemeId="org.netbeans.scheme.default" contextId="org.eclipse.jdt.ui.javaEditorScope"/>
+        <key commandId="org.eclipse.jdt.ui.correction.renameInFile.assist" sequence="M1+R" schemeId="org.netbeans.scheme.default" contextId="org.eclipse.jdt.ui.javaEditorScope"/>
+        <key commandId="org.eclipse.jdt.ui.edit.text.java.add.block.comment" sequence="M1+/" schemeId="org.netbeans.scheme.default" contextId="org.eclipse.jdt.ui.javaEditorScope"/>
+        <key commandId="org.eclipse.jdt.ui.edit.text.java.add.block.comment" sequence="M1+M2+C" schemeId="org.netbeans.scheme.default" contextId="org.eclipse.jdt.ui.javaEditorScope"/>
+        <key commandId="org.eclipse.jdt.ui.edit.text.java.add.import" sequence="M2+M3+I" schemeId="org.netbeans.scheme.default" contextId="org.eclipse.jdt.ui.javaEditorScope"/>
+        <key commandId="org.eclipse.jdt.ui.edit.text.java.correction.assist.proposals" sequence="M3+CR" schemeId="org.netbeans.scheme.default" contextId="org.eclipse.ui.contexts.dialogAndWindow"/>
+        <key commandId="org.eclipse.jdt.ui.edit.text.java.extract.local.variable" sequence="M2+M3+V" schemeId="org.netbeans.scheme.default" contextId="org.eclipse.ui.contexts.window"/>
+        <key commandId="org.eclipse.jdt.ui.edit.text.java.extract.method" sequence="M2+M3+M" schemeId="org.netbeans.scheme.default" contextId="org.eclipse.ui.contexts.window"/>
+        <key commandId="org.eclipse.jdt.ui.edit.text.java.format" sequence="M1+H" schemeId="org.netbeans.scheme.default" contextId="org.eclipse.jdt.ui.javaEditorScope"/>
+        <key commandId="org.eclipse.jdt.ui.edit.text.java.goto.matching.bracket" sequence="M1+{" schemeId="org.netbeans.scheme.default" contextId="org.eclipse.jdt.ui.javaEditorScope"/>
+        <key commandId="org.eclipse.jdt.ui.edit.text.java.move.element" sequence="M1+M" schemeId="org.netbeans.scheme.default" contextId="org.eclipse.ui.contexts.window"/>
+        <key commandId="org.eclipse.jdt.ui.edit.text.java.open.editor" sequence="M1+B" schemeId="org.netbeans.scheme.default" contextId="org.eclipse.ui.contexts.window"/>
+        <key commandId="org.eclipse.jdt.ui.edit.text.java.open.external.javadoc" sequence="M1+M2+SPACE" schemeId="org.netbeans.scheme.default" contextId="org.eclipse.ui.contexts.window"/>
+        <key commandId="org.eclipse.jdt.ui.edit.text.java.open.external.javadoc" sequence="M1+M2+\" schemeId="org.netbeans.scheme.default" contextId="org.eclipse.ui.contexts.window"/>
+        <key commandId="org.eclipse.jdt.ui.edit.text.java.open.hierarchy" sequence="M2+M3+F12" schemeId="org.netbeans.scheme.default" contextId="org.eclipse.jdt.ui.javaEditorScope"/>
+        <key commandId="org.eclipse.jdt.ui.edit.text.java.open.type.hierarchy" sequence="M2+M3+F12" schemeId="org.netbeans.scheme.default" contextId="org.eclipse.ui.contexts.window"/>
+        <key commandId="org.eclipse.jdt.ui.edit.text.java.organize.imports" sequence="M1+M2+I" schemeId="org.netbeans.scheme.default" contextId="org.eclipse.ui.contexts.window"/>
+        <key commandId="org.eclipse.jdt.ui.edit.text.java.refactor.quickMenu" sequence="M2+M3+T" schemeId="org.netbeans.scheme.default" contextId="org.eclipse.ui.contexts.window"/>
+        <key commandId="org.eclipse.jdt.ui.edit.text.java.rename.element" sequence="M2+M3+R" schemeId="org.netbeans.scheme.default" contextId="org.eclipse.ui.contexts.window"/>
+        <key commandId="org.eclipse.jdt.ui.edit.text.java.search.declarations.in.workspace" sequence="M1+G" schemeId="org.netbeans.scheme.default" contextId="org.eclipse.ui.contexts.window"/>
+        <key commandId="org.eclipse.jdt.ui.edit.text.java.search.occurrences.in.file.quickMenu" sequence="M1+M2+U" schemeId="org.netbeans.scheme.default" contextId="org.eclipse.ui.contexts.window"/>
+        <key commandId="org.eclipse.jdt.ui.edit.text.java.search.references.in.workspace" sequence="M3+F7" schemeId="org.netbeans.scheme.default" contextId="org.eclipse.ui.contexts.window"/>
+        <key commandId="org.eclipse.jdt.ui.edit.text.java.select.enclosing" sequence="M1+M2+{" schemeId="org.netbeans.scheme.default" contextId="org.eclipse.jdt.ui.javaEditorScope"/>
+        <key commandId="org.eclipse.jdt.ui.edit.text.java.select.next" sequence="M2+M3+." schemeId="org.netbeans.scheme.default" contextId="org.eclipse.jdt.ui.javaEditorScope"/>
+        <key commandId="org.eclipse.jdt.ui.edit.text.java.select.previous" sequence="M2+M3+," schemeId="org.netbeans.scheme.default" contextId="org.eclipse.jdt.ui.javaEditorScope"/>
+        <key commandId="org.eclipse.jdt.ui.edit.text.java.show.outline" sequence="M1+F12" schemeId="org.netbeans.scheme.default" contextId="org.eclipse.jdt.ui.javaEditorScope"/>
+        <key commandId="org.eclipse.jdt.ui.edit.text.java.source.quickMenu" sequence="M2+F10" schemeId="org.netbeans.scheme.default" contextId="org.eclipse.ui.contexts.window"/>
+        <key commandId="org.eclipse.jdt.ui.edit.text.java.toggle.comment" sequence="M1+/" schemeId="org.netbeans.scheme.default" contextId="org.eclipse.jdt.ui.propertiesEditorScope"/>
+        <key commandId="org.eclipse.jdt.ui.edit.text.java.toggle.comment" sequence="M1+M2+C" schemeId="org.netbeans.scheme.default" contextId="org.eclipse.jdt.ui.propertiesEditorScope"/>
+        <key commandId="org.eclipse.jdt.ui.edit.text.remove.occurrence.annotations" sequence="M2+M3+U" schemeId="org.netbeans.scheme.default" contextId="org.eclipse.jdt.ui.javaEditorScope"/>
+        <key commandId="org.eclipse.jdt.ui.navigate.java.open.structure" sequence="M1+M2+F12" schemeId="org.netbeans.scheme.default" contextId="org.eclipse.jdt.ui.javaEditorScope"/>
+        <key commandId="org.eclipse.jdt.ui.navigate.open.type" sequence="M1+O" schemeId="org.netbeans.scheme.default" contextId="org.eclipse.ui.contexts.window"/>
+        <key commandId="org.eclipse.jdt.ui.navigate.open.type.in.hierarchy" sequence="M1+M2+H" schemeId="org.netbeans.scheme.default" contextId="org.eclipse.ui.contexts.window"/>
+        <key commandId="org.eclipse.m2e.core.ui.command.openPom" sequence="M2+M3+P" schemeId="org.netbeans.scheme.default" contextId="org.eclipse.ui.contexts.window"/>
+        <key commandId="org.eclipse.mylyn.context.ui.commands.open.context.dialog" sequence="M1+M2+M3+ARROW_RIGHT" schemeId="org.netbeans.scheme.default" contextId="org.eclipse.ui.contexts.window"/>
+        <key commandId="org.eclipse.mylyn.tasks.ui.command.new.subtask" sequence="M1+V" schemeId="org.netbeans.scheme.default" contextId="org.eclipse.mylyn.tasks.ui.views.tasks"/>
+        <key commandId="org.eclipse.mylyn.tasks.ui.command.new.subtask" sequence="M2+INSERT" schemeId="org.netbeans.scheme.default" contextId="org.eclipse.mylyn.tasks.ui.views.tasks"/>
+        <key commandId="org.eclipse.mylyn.tasks.ui.command.openSelectedTask" sequence="M1+CR" schemeId="org.netbeans.scheme.default" contextId="org.eclipse.mylyn.tasks.ui.views.tasks"/>
+        <key commandId="org.eclipse.mylyn.wikitext.ui.editor.showCheatSheetCommand" sequence="F1" schemeId="org.netbeans.scheme.default" contextId="org.eclipse.mylyn.internal.wikitext.ui.editor.basicMarkupSourceContext"/>
+        <key commandId="org.eclipse.pde.runtime.spy.commands.menuSpyCommand" sequence="M2+M3+F2" schemeId="org.netbeans.scheme.default" contextId="org.eclipse.ui.contexts.dialogAndWindow"/>
+        <key commandId="org.eclipse.search.ui.openSearchDialog" sequence="M1+M2+F" schemeId="org.netbeans.scheme.default" contextId="org.eclipse.ui.contexts.window"/>
+        <key commandId="org.eclipse.search.ui.performTextSearchWorkspace" sequence="M1+M2+F" schemeId="org.netbeans.scheme.default" contextId="org.eclipse.ui.contexts.window"/>
+        <key commandId="org.eclipse.ui.edit.copy" sequence="M1+C" schemeId="org.netbeans.scheme.default" contextId="org.eclipse.ui.contexts.dialogAndWindow"/>
+        <key commandId="org.eclipse.ui.edit.copy" sequence="M1+INSERT" schemeId="org.netbeans.scheme.default" contextId="org.eclipse.ui.contexts.dialogAndWindow"/>
+        <key commandId="org.eclipse.ui.edit.cut" sequence="M1+X" schemeId="org.netbeans.scheme.default" contextId="org.eclipse.ui.contexts.dialogAndWindow"/>
+        <key commandId="org.eclipse.ui.edit.cut" sequence="M2+DEL" schemeId="org.netbeans.scheme.default" contextId="org.eclipse.ui.contexts.dialogAndWindow"/>
+        <key commandId="org.eclipse.ui.edit.delete" sequence="DEL" schemeId="org.netbeans.scheme.default" contextId="org.eclipse.ui.contexts.window"/>
+        <key commandId="org.eclipse.ui.edit.findIncremental" sequence="M1+F" schemeId="org.netbeans.scheme.default" contextId="org.eclipse.ui.textEditorScope"/>
+        <key commandId="org.eclipse.ui.edit.findIncrementalReverse" sequence="M1+M2+J" schemeId="org.netbeans.scheme.default" contextId="org.eclipse.ui.textEditorScope"/>
+        <key commandId="org.eclipse.ui.edit.findNext" sequence="F3" schemeId="org.netbeans.scheme.default" contextId="org.eclipse.ui.textEditorScope"/>
+        <key commandId="org.eclipse.ui.edit.findPrevious" sequence="M2+F3" schemeId="org.netbeans.scheme.default" contextId="org.eclipse.ui.textEditorScope"/>
+        <key commandId="org.eclipse.ui.edit.findReplace" sequence="M1+H" schemeId="org.netbeans.scheme.default" contextId="org.eclipse.ui.contexts.window"/>
+        <key commandId="org.eclipse.ui.edit.redo" sequence="M1+M2+Z" schemeId="org.netbeans.scheme.default" contextId="org.eclipse.ui.contexts.dialogAndWindow"/>
+        <key commandId="org.eclipse.ui.edit.redo" sequence="M1+Y" schemeId="org.netbeans.scheme.default" contextId="org.eclipse.ui.contexts.dialogAndWindow"/>
+        <key commandId="org.eclipse.ui.edit.selectAll" sequence="M1+A" schemeId="org.netbeans.scheme.default" contextId="org.eclipse.ui.contexts.dialogAndWindow"/>
+        <key commandId="org.eclipse.ui.edit.text.contentAssist.contextInformation" sequence="M1+M2+SPACE" schemeId="org.netbeans.scheme.default" contextId="org.eclipse.ui.contexts.dialogAndWindow"/>
+        <key commandId="org.eclipse.ui.edit.text.contentAssist.contextInformation" sequence="M1+M2+\" schemeId="org.netbeans.scheme.default" contextId="org.eclipse.ui.contexts.dialogAndWindow"/>
+        <key commandId="org.eclipse.ui.edit.text.contentAssist.proposals" sequence="M1+SPACE" schemeId="org.netbeans.scheme.default" contextId="org.eclipse.ui.contexts.dialogAndWindow"/>
+        <key commandId="org.eclipse.ui.edit.text.contentAssist.proposals" sequence="M1+\" schemeId="org.netbeans.scheme.default" contextId="org.eclipse.ui.contexts.dialogAndWindow"/>
+        <key commandId="org.eclipse.ui.edit.text.copyLineDown" sequence="M3+PAGE_DOWN" schemeId="org.netbeans.scheme.default" contextId="org.eclipse.ui.textEditorScope"/>
+        <key commandId="org.eclipse.ui.edit.text.copyLineUp" sequence="M3+PAGE_UP" schemeId="org.netbeans.scheme.default" contextId="org.eclipse.ui.textEditorScope"/>
+        <key commandId="org.eclipse.ui.edit.text.delete.line" sequence="M1+D" schemeId="org.netbeans.scheme.default" contextId="org.eclipse.ui.textEditorScope"/>
+        <key commandId="org.eclipse.ui.edit.text.delete.line.to.end" sequence="M1+M2+DEL" schemeId="org.netbeans.scheme.default" contextId="org.eclipse.ui.textEditorScope"/>
+        <key commandId="org.eclipse.ui.edit.text.deleteNextWord" sequence="M1+DEL" schemeId="org.netbeans.scheme.default" contextId="org.eclipse.ui.textEditorScope"/>
+        <key commandId="org.eclipse.ui.edit.text.deletePreviousWord" sequence="M1+BS" schemeId="org.netbeans.scheme.default" contextId="org.eclipse.ui.textEditorScope"/>
+        <key commandId="org.eclipse.ui.edit.text.folding.collapse" sequence="M1+-" schemeId="org.netbeans.scheme.default" contextId="org.eclipse.ui.textEditorScope"/>
+        <key commandId="org.eclipse.ui.edit.text.folding.collapse" sequence="M1+NUMPAD_SUBTRACT" schemeId="org.netbeans.scheme.default" contextId="org.eclipse.ui.textEditorScope"/>
+        <key commandId="org.eclipse.ui.edit.text.folding.collapse_all" sequence="M1+M2+-" schemeId="org.netbeans.scheme.default" contextId="org.eclipse.ui.textEditorScope"/>
+        <key commandId="org.eclipse.ui.edit.text.folding.collapse_all" sequence="M1+M2+NUMPAD_SUBTRACT" schemeId="org.netbeans.scheme.default" contextId="org.eclipse.ui.textEditorScope"/>
+        <key commandId="org.eclipse.ui.edit.text.folding.expand" sequence="M1+=" schemeId="org.netbeans.scheme.default" contextId="org.eclipse.ui.textEditorScope"/>
+        <key commandId="org.eclipse.ui.edit.text.folding.expand" sequence="M1+NUMPAD_ADD" schemeId="org.netbeans.scheme.default" contextId="org.eclipse.ui.textEditorScope"/>
+        <key commandId="org.eclipse.ui.edit.text.folding.expand_all" sequence="M1+M2+=" schemeId="org.netbeans.scheme.default" contextId="org.eclipse.ui.textEditorScope"/>
+        <key commandId="org.eclipse.ui.edit.text.folding.expand_all" sequence="M1+M2+NUMPAD_ADD" schemeId="org.netbeans.scheme.default" contextId="org.eclipse.ui.textEditorScope"/>
+        <key commandId="org.eclipse.ui.edit.text.goto.line" sequence="M1+G" schemeId="org.netbeans.scheme.default" contextId="org.eclipse.ui.textEditorScope"/>
+        <key commandId="org.eclipse.ui.edit.text.goto.lineEnd" sequence="END" schemeId="org.netbeans.scheme.default" contextId="org.eclipse.ui.textEditorScope"/>
+        <key commandId="org.eclipse.ui.edit.text.goto.lineStart" sequence="HOME" schemeId="org.netbeans.scheme.default" contextId="org.eclipse.ui.textEditorScope"/>
+        <key commandId="org.eclipse.ui.edit.text.goto.textEnd" sequence="M1+END" schemeId="org.netbeans.scheme.default" contextId="org.eclipse.ui.textEditorScope"/>
+        <key commandId="org.eclipse.ui.edit.text.goto.textStart" sequence="M1+HOME" schemeId="org.netbeans.scheme.default" contextId="org.eclipse.ui.textEditorScope"/>
+        <key commandId="org.eclipse.ui.edit.text.goto.wordNext" sequence="M1+ARROW_RIGHT" schemeId="org.netbeans.scheme.default" contextId="org.eclipse.ui.textEditorScope"/>
+        <key commandId="org.eclipse.ui.edit.text.goto.wordPrevious" sequence="M1+ARROW_LEFT" schemeId="org.netbeans.scheme.default" contextId="org.eclipse.ui.textEditorScope"/>
+        <key commandId="org.eclipse.ui.edit.text.gotoLastEditPosition" sequence="M1+Q" schemeId="org.netbeans.scheme.default" contextId="org.eclipse.ui.contexts.window"/>
+        <key commandId="org.eclipse.ui.edit.text.hippieCompletion" sequence="M1+M2+K" schemeId="org.netbeans.scheme.default" contextId="org.eclipse.ui.textEditorScope"/>
+        <key commandId="org.eclipse.ui.edit.text.lowerCase" sequence="M1+U L" schemeId="org.netbeans.scheme.default" contextId="org.eclipse.ui.textEditorScope"/>
+        <key commandId="org.eclipse.ui.edit.text.moveLineDown" sequence="M2+M3+ARROW_DOWN" schemeId="org.netbeans.scheme.default" contextId="org.eclipse.ui.textEditorScope"/>
+        <key commandId="org.eclipse.ui.edit.text.moveLineUp" sequence="M2+M3+ARROW_UP" schemeId="org.netbeans.scheme.default" contextId="org.eclipse.ui.textEditorScope"/>
+        <key commandId="org.eclipse.ui.edit.text.scroll.lineDown" sequence="M1+ARROW_DOWN" schemeId="org.netbeans.scheme.default" contextId="org.eclipse.ui.textEditorScope"/>
+        <key commandId="org.eclipse.ui.edit.text.scroll.lineUp" sequence="M1+ARROW_UP" schemeId="org.netbeans.scheme.default" contextId="org.eclipse.ui.textEditorScope"/>
+        <key commandId="org.eclipse.ui.edit.text.select.lineEnd" sequence="M2+END" schemeId="org.netbeans.scheme.default" contextId="org.eclipse.ui.textEditorScope"/>
+        <key commandId="org.eclipse.ui.edit.text.select.lineStart" sequence="M2+HOME" schemeId="org.netbeans.scheme.default" contextId="org.eclipse.ui.textEditorScope"/>
+        <key commandId="org.eclipse.ui.edit.text.select.wordNext" sequence="M1+M2+ARROW_RIGHT" schemeId="org.netbeans.scheme.default" contextId="org.eclipse.ui.textEditorScope"/>
+        <key commandId="org.eclipse.ui.edit.text.select.wordPrevious" sequence="M1+M2+ARROW_LEFT" schemeId="org.netbeans.scheme.default" contextId="org.eclipse.ui.textEditorScope"/>
+        <key commandId="org.eclipse.ui.edit.text.showInformation" sequence="M1+M2+SPACE" schemeId="org.netbeans.scheme.default" contextId="org.eclipse.ui.textEditorScope"/>
+        <key commandId="org.eclipse.ui.edit.text.showInformation" sequence="M1+M2+\" schemeId="org.netbeans.scheme.default" contextId="org.eclipse.ui.textEditorScope"/>
+        <key commandId="org.eclipse.ui.edit.text.smartEnter" sequence="M2+CR" schemeId="org.netbeans.scheme.default" contextId="org.eclipse.ui.textEditorScope"/>
+        <key commandId="org.eclipse.ui.edit.text.smartEnterInverse" sequence="M1+M2+CR" schemeId="org.netbeans.scheme.default" contextId="org.eclipse.ui.textEditorScope"/>
+        <key commandId="org.eclipse.ui.edit.text.toggleBlockSelectionMode" sequence="M1+M2+R" schemeId="org.netbeans.scheme.default" contextId="org.eclipse.ui.textEditorScope"/>
+        <key commandId="org.eclipse.ui.edit.text.toggleInsertMode" sequence="INSERT" schemeId="org.netbeans.scheme.default" contextId="org.eclipse.ui.textEditorScope"/>
+        <key commandId="org.eclipse.ui.edit.text.toggleOverwrite" sequence="INSERT" schemeId="org.netbeans.scheme.default" contextId="org.eclipse.ui.textEditorScope"/>
+        <key commandId="org.eclipse.ui.edit.text.upperCase" sequence="M1+U U" schemeId="org.netbeans.scheme.default" contextId="org.eclipse.ui.textEditorScope"/>
+        <key commandId="org.eclipse.ui.edit.undo" sequence="M1+Z" schemeId="org.netbeans.scheme.default" contextId="org.eclipse.ui.contexts.dialogAndWindow"/>
+        <key commandId="org.eclipse.ui.file.close" sequence="M1+F4" schemeId="org.netbeans.scheme.default" contextId="org.eclipse.ui.contexts.window"/>
+        <key commandId="org.eclipse.ui.file.close" sequence="M1+W" schemeId="org.netbeans.scheme.default" contextId="org.eclipse.ui.contexts.window"/>
+        <key commandId="org.eclipse.ui.file.closeAll" sequence="M1+M2+F4" schemeId="org.netbeans.scheme.default" contextId="org.eclipse.ui.contexts.window"/>
+        <key commandId="org.eclipse.ui.file.closeAll" sequence="M1+M2+W" schemeId="org.netbeans.scheme.default" contextId="org.eclipse.ui.contexts.window"/>
+        <key commandId="org.eclipse.ui.file.newQuickMenu" sequence="M1+N" schemeId="org.netbeans.scheme.default" contextId="org.eclipse.ui.contexts.window"/>
+        <key commandId="org.eclipse.ui.file.refresh" sequence="F7" schemeId="org.netbeans.scheme.default" contextId="org.eclipse.ui.contexts.window"/>
+        <key commandId="org.eclipse.ui.file.save" sequence="M1+S" schemeId="org.netbeans.scheme.default" contextId="org.eclipse.ui.contexts.window"/>
+        <key commandId="org.eclipse.ui.file.saveAll" sequence="M1+M2+S" schemeId="org.netbeans.scheme.default" contextId="org.eclipse.ui.contexts.window"/>
+        <key commandId="org.eclipse.ui.navigate.backwardHistory" sequence="M3+ARROW_LEFT" schemeId="org.netbeans.scheme.default" contextId="org.eclipse.ui.contexts.window"/>
+        <key commandId="org.eclipse.ui.navigate.forwardHistory" sequence="M3+ARROW_RIGHT" schemeId="org.netbeans.scheme.default" contextId="org.eclipse.ui.contexts.window"/>
+        <key commandId="org.eclipse.ui.navigate.next" sequence="M1+." schemeId="org.netbeans.scheme.default" contextId="org.eclipse.ui.contexts.window"/>
+        <key commandId="org.eclipse.ui.navigate.nextSubTab" sequence="M1+M3+PAGE_DOWN" schemeId="org.netbeans.scheme.default" contextId="org.eclipse.ui.contexts.dialogAndWindow"/>
+        <key commandId="org.eclipse.ui.navigate.openResource" sequence="M2+M3+O" schemeId="org.netbeans.scheme.default" contextId="org.eclipse.ui.contexts.window"/>
+        <key commandId="org.eclipse.ui.navigate.previous" sequence="M1+," schemeId="org.netbeans.scheme.default" contextId="org.eclipse.ui.contexts.window"/>
+        <key commandId="org.eclipse.ui.navigate.previousSubTab" sequence="M1+M3+PAGE_UP" schemeId="org.netbeans.scheme.default" contextId="org.eclipse.ui.contexts.dialogAndWindow"/>
+        <key commandId="org.eclipse.ui.newWizard" sequence="M1+N" schemeId="org.netbeans.scheme.default" contextId="org.eclipse.ui.contexts.window"/>
+        <key commandId="org.eclipse.ui.views.showView" sequence="M1+1" schemeId="org.netbeans.scheme.default" contextId="org.eclipse.ui.contexts.window"/>
+        <key commandId="org.eclipse.ui.views.showView" sequence="M1+6" schemeId="org.netbeans.scheme.default" contextId="org.eclipse.ui.contexts.window"/>
+        <key commandId="org.eclipse.ui.views.showView" sequence="M1+7" schemeId="org.netbeans.scheme.default" contextId="org.eclipse.ui.contexts.window"/>
+        <key commandId="org.eclipse.ui.views.showView" sequence="M1+M2+0" schemeId="org.netbeans.scheme.default" contextId="org.eclipse.ui.contexts.window"/>
+        <key commandId="org.eclipse.ui.views.showView" sequence="M2+M3+1" schemeId="org.netbeans.scheme.default" contextId="org.eclipse.ui.contexts.window"/>
+        <key commandId="org.eclipse.ui.views.showView" sequence="M2+M3+5" schemeId="org.netbeans.scheme.default" contextId="org.eclipse.ui.contexts.window"/>
+        <key commandId="org.eclipse.ui.views.showView" sequence="M3+F12" schemeId="org.netbeans.scheme.default" contextId="org.eclipse.ui.contexts.window"/>
+        <key commandId="org.eclipse.ui.window.maximizePart" sequence="M2+ESCAPE" schemeId="org.netbeans.scheme.default" contextId="org.eclipse.ui.contexts.window"/>
+        <key commandId="org.eclipse.ui.window.nextEditor" sequence="M1+PAGE_DOWN" schemeId="org.netbeans.scheme.default" contextId="org.eclipse.ui.contexts.window"/>
+        <key commandId="org.eclipse.ui.window.nextView" sequence="M1+M3+PAGE_DOWN" schemeId="org.netbeans.scheme.default" contextId="org.eclipse.ui.contexts.window"/>
+        <key commandId="org.eclipse.ui.window.previousEditor" sequence="M1+PAGE_UP" schemeId="org.netbeans.scheme.default" contextId="org.eclipse.ui.contexts.window"/>
+        <key commandId="org.eclipse.ui.window.previousPerspective" sequence="M1+M2+F8" schemeId="org.netbeans.scheme.default" contextId="org.eclipse.ui.contexts.window"/>
+        <key commandId="org.eclipse.ui.window.previousView" sequence="M1+M3+PAGE_UP" schemeId="org.netbeans.scheme.default" contextId="org.eclipse.ui.contexts.window"/>
+        <key commandId="org.eclipse.ui.window.quickAccess" sequence="M1+I" schemeId="org.netbeans.scheme.default" contextId="org.eclipse.ui.contexts.window"/>
+        <key commandId="org.eclipse.ui.window.switchToEditor" sequence="M2+F4" schemeId="org.netbeans.scheme.default" contextId="org.eclipse.ui.contexts.window"/>
+        <key commandId="org.eclipse.wb.core.commands.switch" sequence="M1+0" schemeId="org.netbeans.scheme.default" contextId="org.eclipse.ui.textEditorScope"/>
+    </extension>
+
+</plugin>

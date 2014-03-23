@@ -1,0 +1,103 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?eclipse version="3.4"?>
+<plugin>
+    <extension point="org.eclipse.ui.bindings">
+        <scheme name="IntelliJ Idea" id="com.intellij.scheme.default"/>
+          <key commandId="org.eclipse.ui.edit.paste" sequence="M1+V" schemeId="com.intellij.scheme.default"/>
+        <key commandId="org.eclipse.ui.edit.copy" sequence="M1+C" schemeId="com.intellij.scheme.default"/>
+        <key commandId="org.eclipse.ui.file.saveAll" sequence="M1+S" schemeId="com.intellij.scheme.default"/>
+        <key commandId="org.eclipse.ui.edit.text.smartEnter" sequence="M2+ENTER" schemeId="com.intellij.scheme.default"/>
+        <key commandId="org.eclipse.ui.edit.text.toggleBlockSelectionMode" sequence="M1+M3+INSERT" schemeId="com.intellij.scheme.default"/>
+        <key commandId="org.eclipse.ui.file.close" sequence="M1+F4" schemeId="com.intellij.scheme.default"/>
+        <key commandId="org.eclipse.jdt.debug.ui.commands.Inspect" sequence="M3+F8" schemeId="com.intellij.scheme.default"/>
+        <key commandId="org.eclipse.jdt.ui.edit.text.java.toggle.comment" sequence="M1+/" schemeId="com.intellij.scheme.default"/>
+        <key commandId="org.eclipse.ui.edit.findIncremental" sequence="M1+F" schemeId="com.intellij.scheme.default"/>
+        <key commandId="org.eclipse.ui.window.openEditorDropDown" sequence="M1+E" schemeId="com.intellij.scheme.default"/>
+        <key commandId="org.eclipse.ui.window.quickAccess" sequence="M1+M2+A" schemeId="com.intellij.scheme.default"/>
+        <key commandId="org.eclipse.jdt.ui.edit.text.java.correction.assist.proposals" sequence="M3+ENTER" schemeId="com.intellij.scheme.default"/>
+        <key commandId="org.eclipse.ui.edit.text.contentAssist.proposals" sequence="M1+SPACE" schemeId="com.intellij.scheme.default"/>
+        <key commandId="org.eclipse.jdt.ui.edit.text.java.gotoBreadcrumb" sequence="M1+M3+B" schemeId="com.intellij.scheme.default"/>
+       
+      <key commandId="org.eclipse.debug.ui.commands.Resume" sequence="F9" schemeId="com.intellij.scheme.default" contextId="org.eclipse.debug.ui.debugging"/>
+        <key commandId="org.eclipse.debug.ui.commands.RunLast" sequence="M1+F5" schemeId="com.intellij.scheme.default" contextId="org.eclipse.ui.contexts.window"/>
+        <key commandId="org.eclipse.debug.ui.commands.RunToLine" sequence="M3+F9" schemeId="com.intellij.scheme.default" contextId="org.eclipse.debug.ui.debugging"/>
+        <key commandId="org.eclipse.debug.ui.commands.StepOver" sequence="F8" schemeId="com.intellij.scheme.default" contextId="org.eclipse.debug.ui.debugging"/>
+        <key commandId="org.eclipse.debug.ui.commands.StepReturn" sequence="M2+F8" schemeId="com.intellij.scheme.default" contextId="org.eclipse.debug.ui.debugging"/>
+        <key commandId="org.eclipse.debug.ui.commands.ToggleBreakpoint" sequence="M1+F8" schemeId="com.intellij.scheme.default" contextId="org.eclipse.ui.contexts.window"/>
+        <key commandId="org.eclipse.jdt.debug.ui.breakpoint.properties" sequence="M3+CR" schemeId="com.intellij.scheme.default" contextId="org.eclipse.debug.ui.BreakpointView"/>
+        <key commandId="org.eclipse.jdt.debug.ui.commands.Execute" sequence="M3+F8" schemeId="com.intellij.scheme.default" contextId="org.eclipse.ui.contexts.window"/>
+        <key commandId="org.eclipse.jdt.debug.ui.commands.StepIntoSelection" sequence="M2+F7" schemeId="com.intellij.scheme.default" contextId="org.eclipse.debug.ui.debugging"/>
+        <key commandId="org.eclipse.jdt.ui.edit.text.java.add.block.comment" sequence="M1+M2+/" schemeId="com.intellij.scheme.default" contextId="org.eclipse.jdt.ui.javaEditorScope"/>
+        <key commandId="org.eclipse.jdt.ui.edit.text.java.add.block.comment" sequence="M1+M2+NUMPAD_DIVIDE" schemeId="com.intellij.scheme.default" contextId="org.eclipse.jdt.ui.javaEditorScope"/>
+        <key commandId="org.eclipse.jdt.ui.edit.text.java.add.import" sequence="M3+CR" schemeId="com.intellij.scheme.default" contextId="org.eclipse.jdt.ui.javaEditorScope"/>
+        <key commandId="org.eclipse.jdt.ui.edit.text.java.add.javadoc.comment" sequence="M3+CR" schemeId="com.intellij.scheme.default" contextId="org.eclipse.ui.contexts.window"/>
+        <key commandId="org.eclipse.jdt.ui.edit.text.java.extract.local.variable" sequence="M1+M3+V" schemeId="com.intellij.scheme.default" contextId="org.eclipse.ui.contexts.window"/>
+        <key commandId="org.eclipse.jdt.ui.edit.text.java.extract.method" sequence="M1+M3+M" schemeId="com.intellij.scheme.default" contextId="org.eclipse.ui.contexts.window"/>
+        <key commandId="org.eclipse.jdt.ui.edit.text.java.format" sequence="M1+M3+L" schemeId="com.intellij.scheme.default" contextId="org.eclipse.jdt.ui.javaEditorScope"/>
+        <key commandId="org.eclipse.jdt.ui.edit.text.java.goto.matching.bracket" sequence="M1+}" schemeId="com.intellij.scheme.default" contextId="org.eclipse.jdt.ui.javaEditorScope"/>
+        <key commandId="org.eclipse.jdt.ui.edit.text.java.goto.next.member" sequence="M3+ARROW_DOWN" schemeId="com.intellij.scheme.default" contextId="org.eclipse.jdt.ui.javaEditorScope"/>
+        <key commandId="org.eclipse.jdt.ui.edit.text.java.goto.previous.member" sequence="M3+ARROW_UP" schemeId="com.intellij.scheme.default" contextId="org.eclipse.jdt.ui.javaEditorScope"/>
+        <key commandId="org.eclipse.jdt.ui.edit.text.java.indent" sequence="M1+M3+I" schemeId="com.intellij.scheme.default" contextId="org.eclipse.jdt.ui.javaEditorScope"/>
+        <key commandId="org.eclipse.jdt.ui.edit.text.java.inline" sequence="M1+M3+N" schemeId="com.intellij.scheme.default" contextId="org.eclipse.ui.contexts.window"/>
+        <key commandId="org.eclipse.jdt.ui.edit.text.java.modify.method.parameters" sequence="M1+F6" schemeId="com.intellij.scheme.default" contextId="org.eclipse.ui.contexts.window"/>
+        <key commandId="org.eclipse.jdt.ui.edit.text.java.move.element" sequence="F6" schemeId="com.intellij.scheme.default" contextId="org.eclipse.ui.contexts.window"/>
+        <key commandId="org.eclipse.jdt.ui.edit.text.java.open.editor" sequence="M1+B" schemeId="com.intellij.scheme.default" contextId="org.eclipse.ui.contexts.window"/>
+        <key commandId="org.eclipse.jdt.ui.edit.text.java.open.external.javadoc" sequence="M2+F1" schemeId="com.intellij.scheme.default" contextId="org.eclipse.ui.contexts.window"/>
+        <key commandId="org.eclipse.jdt.ui.edit.text.java.open.type.hierarchy" sequence="M1+H" schemeId="com.intellij.scheme.default" contextId="org.eclipse.ui.contexts.window"/>
+        <key commandId="org.eclipse.jdt.ui.edit.text.java.organize.imports" sequence="M1+M3+O" schemeId="com.intellij.scheme.default" contextId="org.eclipse.ui.contexts.window"/>
+        <key commandId="org.eclipse.jdt.ui.edit.text.java.rename.element" sequence="M2+F6" schemeId="com.intellij.scheme.default" contextId="org.eclipse.ui.contexts.window"/>
+        <key commandId="org.eclipse.jdt.ui.edit.text.java.search.declarations.in.workspace" sequence="M3+F7" schemeId="com.intellij.scheme.default" contextId="org.eclipse.ui.contexts.window"/>
+        <key commandId="org.eclipse.jdt.ui.edit.text.java.search.occurrences.in.file.quickMenu" sequence="M1+M2+U" schemeId="com.intellij.scheme.default" contextId="org.eclipse.ui.contexts.window"/>
+        <key commandId="org.eclipse.jdt.ui.edit.text.java.search.references.in.workspace" sequence="M1+F7" schemeId="com.intellij.scheme.default" contextId="org.eclipse.ui.contexts.window"/>
+        <key commandId="org.eclipse.jdt.ui.edit.text.java.select.enclosing" sequence="M1+W" schemeId="com.intellij.scheme.default" contextId="org.eclipse.jdt.ui.javaEditorScope"/>
+        <key commandId="org.eclipse.jdt.ui.edit.text.java.select.last" sequence="M1+M2+W" schemeId="com.intellij.scheme.default" contextId="org.eclipse.jdt.ui.javaEditorScope"/>
+        <key commandId="org.eclipse.jdt.ui.edit.text.java.select.next" sequence="M1+M2+ARROW_RIGHT" schemeId="com.intellij.scheme.default" contextId="org.eclipse.jdt.ui.javaEditorScope"/>
+        <key commandId="org.eclipse.jdt.ui.edit.text.java.select.previous" sequence="M1+M2+ARROW_LEFT" schemeId="com.intellij.scheme.default" contextId="org.eclipse.jdt.ui.javaEditorScope"/>
+        <key commandId="org.eclipse.jdt.ui.edit.text.java.show.outline" sequence="M1+F12" schemeId="com.intellij.scheme.default" contextId="org.eclipse.jdt.ui.javaEditorScope"/>
+        <key commandId="org.eclipse.jdt.ui.edit.text.java.surround.with.quickMenu" sequence="M1+M3+T" schemeId="com.intellij.scheme.default" contextId="org.eclipse.ui.contexts.window"/>
+        <key commandId="org.eclipse.jdt.ui.edit.text.java.toggleMarkOccurrences" sequence="M1+M2+F7" schemeId="com.intellij.scheme.default" contextId="org.eclipse.jdt.ui.javaEditorScope"/>
+        <key commandId="org.eclipse.jdt.ui.navigate.java.open.structure" sequence="M1+F12" schemeId="com.intellij.scheme.default" contextId="org.eclipse.jdt.ui.javaEditorScope"/>
+        <key commandId="org.eclipse.jdt.ui.navigate.open.type" sequence="M1+N" schemeId="com.intellij.scheme.default" contextId="org.eclipse.ui.contexts.window"/>
+        <key commandId="org.eclipse.m2e.core.ui.command.openPom" sequence="M1+I" schemeId="com.intellij.scheme.default" contextId="org.eclipse.ui.contexts.window"/>
+        <key commandId="org.eclipse.mylyn.context.ui.commands.open.context.dialog" sequence="M2+M3+ARROW_LEFT" schemeId="com.intellij.scheme.default" contextId="org.eclipse.ui.contexts.window"/>
+        <key commandId="org.eclipse.mylyn.tasks.ui.command.activateTask" sequence="M1+F9" schemeId="com.intellij.scheme.default" contextId="org.eclipse.ui.contexts.window"/>
+        <key commandId="org.eclipse.mylyn.tasks.ui.command.openTask" sequence="M1+F3" schemeId="com.intellij.scheme.default" contextId="org.eclipse.ui.contexts.window"/>
+        <key commandId="org.eclipse.search.ui.openSearchDialog" sequence="M1+M2+F" schemeId="com.intellij.scheme.default" contextId="org.eclipse.ui.contexts.window"/>
+        <key commandId="org.eclipse.ui.edit.findNext" sequence="F3" schemeId="com.intellij.scheme.default" contextId="org.eclipse.ui.textEditorScope"/>
+        <key commandId="org.eclipse.ui.edit.findNext" sequence="M1+L" schemeId="com.intellij.scheme.default" contextId="org.eclipse.ui.textEditorScope"/>
+        <key commandId="org.eclipse.ui.edit.findPrevious" sequence="M1+M2+L" schemeId="com.intellij.scheme.default" contextId="org.eclipse.ui.textEditorScope"/>
+        <key commandId="org.eclipse.ui.edit.findPrevious" sequence="M2+F3" schemeId="com.intellij.scheme.default" contextId="org.eclipse.ui.textEditorScope"/>
+        <key commandId="org.eclipse.ui.edit.findReplace" sequence="M1+R" schemeId="com.intellij.scheme.default" contextId="org.eclipse.ui.contexts.window"/>
+        <key commandId="org.eclipse.ui.edit.redo" sequence="M1+M2+Z" schemeId="com.intellij.scheme.default" contextId="org.eclipse.ui.contexts.dialogAndWindow"/>
+        <key commandId="org.eclipse.ui.edit.redo" sequence="M2+M3+BS" schemeId="com.intellij.scheme.default" contextId="org.eclipse.ui.contexts.dialogAndWindow"/>
+        <key commandId="org.eclipse.ui.edit.text.contentAssist.contextInformation" sequence="M1+Q" schemeId="com.intellij.scheme.default" contextId="org.eclipse.ui.contexts.dialogAndWindow"/>
+        <key commandId="org.eclipse.ui.edit.text.delete.line" sequence="M1+Y" schemeId="com.intellij.scheme.default" contextId="org.eclipse.ui.textEditorScope"/>
+        <key commandId="org.eclipse.ui.edit.text.folding.collapse_all" sequence="M1+M2+-" schemeId="com.intellij.scheme.default" contextId="org.eclipse.ui.textEditorScope"/>
+        <key commandId="org.eclipse.ui.edit.text.folding.collapse_all" sequence="M1+M2+NUMPAD_SUBTRACT" schemeId="com.intellij.scheme.default" contextId="org.eclipse.ui.textEditorScope"/>
+        <key commandId="org.eclipse.ui.edit.text.folding.expand_all" sequence="M1+M2+=" schemeId="com.intellij.scheme.default" contextId="org.eclipse.ui.textEditorScope"/>
+        <key commandId="org.eclipse.ui.edit.text.folding.expand_all" sequence="M1+M2+NUMPAD_ADD" schemeId="com.intellij.scheme.default" contextId="org.eclipse.ui.textEditorScope"/>
+        <key commandId="org.eclipse.ui.edit.text.goto.line" sequence="M1+G" schemeId="com.intellij.scheme.default" contextId="org.eclipse.ui.textEditorScope"/>
+        <key commandId="org.eclipse.ui.edit.text.gotoLastEditPosition" sequence="M1+M2+BS" schemeId="com.intellij.scheme.default" contextId="org.eclipse.ui.contexts.window"/>
+        <key commandId="org.eclipse.ui.edit.text.lowerCase" sequence="M1+M2+U" schemeId="com.intellij.scheme.default" contextId="org.eclipse.ui.textEditorScope"/>
+        <key commandId="org.eclipse.ui.edit.text.moveLineDown" sequence="M1+M2+ARROW_DOWN" schemeId="com.intellij.scheme.default" contextId="org.eclipse.ui.textEditorScope"/>
+        <key commandId="org.eclipse.ui.edit.text.moveLineUp" sequence="M1+M2+ARROW_UP" schemeId="com.intellij.scheme.default" contextId="org.eclipse.ui.textEditorScope"/>
+        <key commandId="org.eclipse.ui.edit.text.select.wordNext" sequence="M1+M2+ARROW_RIGHT" schemeId="com.intellij.scheme.default" contextId="org.eclipse.ui.textEditorScope"/>
+        <key commandId="org.eclipse.ui.edit.text.select.wordPrevious" sequence="M1+M2+ARROW_LEFT" schemeId="com.intellij.scheme.default" contextId="org.eclipse.ui.textEditorScope"/>
+        <key commandId="org.eclipse.ui.edit.text.showInformation" sequence="M1+Q" schemeId="com.intellij.scheme.default" contextId="org.eclipse.ui.textEditorScope"/>
+        <key commandId="org.eclipse.ui.edit.text.upperCase" sequence="M1+M2+U" schemeId="com.intellij.scheme.default" contextId="org.eclipse.ui.textEditorScope"/>
+        <key commandId="org.eclipse.ui.edit.undo" sequence="M1+Z" schemeId="com.intellij.scheme.default" contextId="org.eclipse.ui.contexts.dialogAndWindow"/>
+        <key commandId="org.eclipse.ui.edit.undo" sequence="M3+BS" schemeId="com.intellij.scheme.default" contextId="org.eclipse.ui.contexts.dialogAndWindow"/>
+        <key commandId="org.eclipse.ui.file.close" sequence="M1+M2+F4" schemeId="com.intellij.scheme.default" contextId="org.eclipse.ui.contexts.window"/>
+        <key commandId="org.eclipse.ui.file.refresh" sequence="F7" schemeId="com.intellij.scheme.default" contextId="org.eclipse.ui.contexts.window"/>
+        <key commandId="org.eclipse.ui.navigate.backwardHistory" sequence="M1+M3+ARROW_LEFT" schemeId="com.intellij.scheme.default" contextId="org.eclipse.ui.contexts.window"/>
+        <key commandId="org.eclipse.ui.navigate.forwardHistory" sequence="M1+M3+ARROW_RIGHT" schemeId="com.intellij.scheme.default" contextId="org.eclipse.ui.contexts.window"/>
+        <key commandId="org.eclipse.ui.navigate.openResource" sequence="M1+M2+N" schemeId="com.intellij.scheme.default" contextId="org.eclipse.ui.contexts.window"/>
+        <key commandId="org.eclipse.ui.project.buildAll" sequence="M1+F9" schemeId="com.intellij.scheme.default" contextId="org.eclipse.ui.contexts.window"/>
+        <key commandId="org.eclipse.ui.window.nextEditor" sequence="M3+ARROW_RIGHT" schemeId="com.intellij.scheme.default" contextId="org.eclipse.ui.contexts.window"/>
+        <key commandId="org.eclipse.ui.window.nextPerspective" sequence="M1+F8" schemeId="com.intellij.scheme.default" contextId="org.eclipse.ui.contexts.window"/>
+        <key commandId="org.eclipse.ui.window.nextView" sequence="F7" schemeId="com.intellij.scheme.default" contextId="org.eclipse.ui.contexts.window"/>
+        <key commandId="org.eclipse.ui.window.previousEditor" sequence="M3+ARROW_LEFT" schemeId="com.intellij.scheme.default" contextId="org.eclipse.ui.contexts.window"/>
+        <key commandId="org.eclipse.ui.window.previousView" sequence="M1+M2+F7" schemeId="com.intellij.scheme.default" contextId="org.eclipse.ui.contexts.window"/>
+      </extension>  
+
+</plugin>
